@@ -23,12 +23,12 @@ const Login = () => {
                 console.log('ERROR', error);
                 setUser(null);
             })
-    }
+    };
 
 
     const handleGitHubSignIn = () => {
         signInWithPopup(auth, githubProvider)
-            .then((result) => { 
+            .then((result) => {
                 console.log(result);
                 setUser(result.user);
             })
@@ -36,19 +36,19 @@ const Login = () => {
                 console.log('ERROR', error);
                 setUser(null);
             })
-    }
+    };
 
 
-    const handleSignOut = () => { 
+    const handleSignOut = () => {
         signOut(auth)
-            .then(() => { 
+            .then(() => {
                 setUser(null);
             })
-        .catch(error => {
-            console.log('ERROR', error);
-            setUser(null);
-        })
-    }
+            .catch(error => {
+                console.log('ERROR', error);
+                setUser(null);
+            })
+    };
 
 
     return (
@@ -68,7 +68,7 @@ const Login = () => {
             {
                 user && <div className="ml-20 mt-10 space-y-2">
                     <h2 className="text-xl font-semibold">Welcome to {user.displayName}</h2>
-                    <h4 className="text-lg font-semibold">Email : {user.email} </h4>
+                    <h4 className="text-lg font-semibold">Email : {user.email || user.providerData[0].email} </h4>
                     <img src={user.photoURL} alt="" />
                 </div>
             }
