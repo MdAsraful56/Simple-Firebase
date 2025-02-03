@@ -4,8 +4,8 @@ import { NavLink } from "react-router";
 const Navber = () => {
 
     const nav = <>
-        <NavLink className='mr-5 font-semibold text-base' to='/' >Home</NavLink>
-        <NavLink className='ml-5 font-semibold text-base' to='/about' >About</NavLink>
+        <NavLink className='md:mr-5 font-semibold text-base' to='/' >Home</NavLink>
+        <NavLink className='md:ml-5 font-semibold text-base' to='/about' >About</NavLink>
     </>
 
     return (
@@ -34,7 +34,7 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <NavLink to='/login' ><a className="btn">Login</a></NavLink>
+                    <NavLink to='/login'className="btn">Login</NavLink>
                 </div>
             </div>
         </div>
