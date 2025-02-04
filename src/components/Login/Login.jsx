@@ -68,7 +68,7 @@ const Login = () => {
             {
                 user && <div className="ml-20 mt-10 space-y-2">
                     <h2 className="text-xl font-semibold">Welcome to {user.displayName}</h2>
-                    <h4 className="text-lg font-semibold">Email : {user.email || user.providerData[0].email} </h4>
+                    <h4 className="text-lg font-semibold">Email : {user.email ?? user.providerData[0]?.email} </h4>
                     <img src={user.photoURL} alt="" />
                 </div>
             }
